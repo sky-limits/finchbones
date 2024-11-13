@@ -20,6 +20,18 @@ hr {width: 50%;}
  
 img {border: 0;}
 
+.parent {
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: repeat(2, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 41px;
+}
+
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 2 / 1 / 3 / 2; }
+
+
     
     </style>
     
@@ -42,17 +54,14 @@ img {border: 0;}
 	<noscript>Please enable JavaScript to view this website!</noscript>
 <main id="content">
         <section>
-        <center><h1>Baby's Breath [TWWM]</h1></center>
+        <center><h1>TITLE</h1></center>
         <br><br>
        
-       <p>  A hot sun echoed overhead as Menri bounced along the desert plains of his home. Passing scrub brush and sage, cactus and rocks with lizards hiding underneath, he made his way towards a large burrow where he had dug himself multiple dens. He plodded into his burrow, noting there was a new passageway to his left, one he had not dug. Always ever curious, he followed the smell of cinnamon and dry desert heat. At first, when he fell down, he didn't notice the feeling of falling.</p>
-       
-       <p>Then Menri tumbled head over heels, trembling as he quickly plummeted through the air and landed- on his feet? A wide space stretched before him, a place full of his favorite things - rock statues and the spiky lizards he would befriend, a small, cool den underneath a large rock and a large, circular pool in the very center of this new place. There was no sky, Menri noted, simply a large, domed shiny wall that stretched over his head. He craned his neck to see if the wall went everywhere and fell over backwards, coming face to face with a small bird. It chirped and hopped backwards, unalarmed, but friendly! Menri nuzzled the bird and it gladly cozied up to him. After a while, when the sunbeams moved and Menri's patch of dirt was no longer warm, he rose to his feet and began to explore more. The bird gently squawked and skittered into the brush, not bothering to watch him explore.</p>
-       
-       <p>Menri poked his muzzle into a crevice by the den, not a good idea, scorpions! And then he explored the den, a place full of soft moss that smelled like...family, like home. Cinnamon sticks bound in sage branches hung off of the entrance to the den, and there were alcoves in the wall filled with little objects, such as a small tower of rocks, a few pieces of eggshell, and one strange object he had never seen before: a long, straight stick with a pointy tip and feathers at the very end. Menri glanced around, looking for an answer as to what this object could be, instead out of the corner of his eye, he caught a flash of white. Trotting over cautiously, he nosed at the plant, dried brown leaves and crunchy white petals, all in bunches.</p>
-       
-       <p>There was another just ahead, and another and another. Menri began to pick up speed as he followed the trail of long dead plants, skidding to a stop in front of a towering esk, with trees, bushes, and huge boulders precariously perched upon their back. The esk rumbled, and it sounded like a rockslide, but kind. They leaned down, close to the flowers on the ground, and then met Menri's eyes. A flash of images were suddenly given to Menri, hares, like the ones he raced, a spatter of blood covering his eyes, and then the small, white flowers that lay in front of him. He looked up in wonder at this huge horned friend. <i>Menhir!</i> he realized, recognizing the face he had seen for a few moments after his transformation. Menri quickly embraced the older esk, causing them to slightly stiffen, but then relax into the show of affection. Menri tilted his head. <i>Why are you here?</i> Menhir made a low, comforting sound, and conveyed the emotion of helpfulness. They were here to help Menri, plus he had called them. The older esk began a story in their usual way: using images, to tell Menri of what they needed to know. The pair settled into the sun warmed sand of Menri's conservatory room, comfortable and safe.</p>
-       
+        <div class="parent">
+          <div class="div1"> </div>
+          <div class="div2"> </div>
+          </div> 
+
         </section>
       </main>
 </div>
