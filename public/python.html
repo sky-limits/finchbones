@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>World of Fenara Breeding Roller</title>
+</head>
+
+<center><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8e2638a0-6a83-4dc8-a73a-570c7f1dda6a/dhqqxf2-0af9d569-b435-44c4-8e81-0d053bbca772.png/v1/fill/w_250,h_250/mountaineering_by_fenarasden_dhqqxf2-250t.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDUwIiwicGF0aCI6IlwvZlwvOGUyNjM4YTAtNmE4My00ZGM4LWE3M2EtNTcwYzdmMWRkYTZhXC9kaHFxeGYyLTBhZjlkNTY5LWI0MzUtNDRjNC04ZTgxLTBkMDUzYmJjYTc3Mi5wbmciLCJ3aWR0aCI6Ijw9NDUwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.28XnGRpoRT5y94UgzFgOPUKkEn3fTwE03ih4v5AfYFY"></img></center>
+<body>
+    <div class="container">
+        <h1>World of Fenara Breeding Roller</h1>
+
+        <div class="parent-section">
+            <h2>Sire</h2>
+            <input type="text" id="Sire-genotype" placeholder="Enter Sire Genotype">
+            
+            <label for="Sire-build">Coat Type:</label>
+            <select id="Sire-build">
+                <option value="Standard">Standard</option>
+                <option value="Dire">Dire</option>
+            </select>
+
+            <label for="Sire-coat">Coat Type:</label>
+            <select id="Sire-coat">
+                <option value="Wolf">Wolf</option>
+                <option value="Wispy">Wispy</option>
+            </select>
+
+            <label for="Sire-ears">Ears:</label>
+            <select id="Sire-ears">
+                <option value="Wolf">Wolf</option>
+            </select>
+
+            <label for="Sire-tail">Tail:</label>
+            <select id="Sire-tail">
+                <option value="Wolf">Wolf</option>
+                <option value="Curly">Curly</option>
+            </select>
+            
+         <!---   <label for="traits2">Physical Traits:</label>
+    <select id="traits2" multiple>
+        <option value="Wolf Coat">Wolf Coat</option>
+        <option value="Wispy Coat">Wispy Coat</option>
+        <option value="Wolf Ears">Wolf Ears</option>
+        <option value="Wolf Tail">Wolf Tail</option>
+        <option value="Curly Tail">Curly Tail</option>
+    </select><br> --->
+        </div>
+
+        <div class="parent-section">
+            <h2>Dam</h2>
+            <input type="text" id="Dam-genotype" placeholder="Enter Dam Genotype">
+
+            <label for="Dam-build">Coat Type:</label>
+            <select id="Dam-build">
+                <option value="Standard">Standard</option>
+                <option value="Dire">Dire</option>
+            </select>
+
+            <label for="Dam-coat">Coat Type:</label>
+            <select id="Dam-coat">
+                <option value="Wolf">Wolf</option>
+                <option value="Wispy">Wispy</option>
+            </select>
+
+            <label for="Dam-ears">Ears:</label>
+            <select id="Dam-ears">
+                <option value="Wolf">Wolf</option>
+            </select>
+
+            <label for="Dam-tail">Tail:</label>
+            <select id="Dam-tail">
+                <option value="Wolf">Wolf</option>
+                <option value="Curly">Curly</option>
+            </select>
+        
+       <!---     <label for="traits2">Physical Traits:</label>
+    <select id="traits2" multiple>
+        <option value="Wolf Coat">Wolf Coat</option>
+        <option value="Wispy Coat">Wispy Coat</option>
+        <option value="Wolf Ears">Wolf Ears</option>
+        <option value="Wolf Tail">Wolf Tail</option>
+        <option value="Curly Tail">Curly Tail</option>
+    </select><br> --->
+</div>
+        <button id="generate-offspring">Generate Offspring</button>
+
+        <h2>Offspring Results</h2>
+        <div id="results"></div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
