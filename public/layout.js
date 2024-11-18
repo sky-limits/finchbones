@@ -111,7 +111,7 @@ function footerHTML() {
 	        <nav>
 	          <ul>
 	            <li><a href="https://finchbones.neocities.org">Home</a></li>
-	            <li><a href="https://finchbones.neocities.org/index-1">Blog</a></li>
+	            <li><a href="https://finchbones.neocities.org/not_found">Blog (WIP)</a></li>
 	            <li><a href="https://finchbones.neocities.org/artqueue">Art Queue</a></li>
 	            <li><a href="https://finchbones.neocities.org/oc_directory">OCs</a></li>
 	            <li><a href="https://finchbones.neocities.org/shrine">Shrines & Collections</a></li>
@@ -125,7 +125,7 @@ function footerHTML() {
 	  
         <div class="sidebar-section">
           <div class="sidebar-title">about me</div>
-          <p>Hi! My name is Elliot ^w^. I'm a furry and trans man! 18+, minors please DNI!</p>
+          <p>18+, minors please DNI</p>
         </div>
         <div class="sidebar-section">
           <div class="sidebar-title">My time and date</div>
@@ -150,7 +150,7 @@ function footerHTML() {
     
     
     <div class="sidebar-section">
-          <div class="sidebar-title">Link back to my site (this is a button)!</div>
+          <div class="sidebar-title">Link back to my site!</div>
           <div class="site-button">
 		  	<a href="https://finchbones.neocities.org/" target="_blank"><img style="width: 88px; height: 31px;" src="https://finchbones.neocities.org/images/blinkies/buttons/sitebutton.png"></a>
 			<textarea><a href="https://finchbones.neocities.org/" target="_blank"><img src="https://finchbones.neocities.org/images/blinkies/buttons/sitebutton.png"</a></textarea>
@@ -158,13 +158,7 @@ function footerHTML() {
         </div>
     
 		
-		<div class="sidebar-section">
-          <div class="sidebar-title">Link back to my site (this is formatted for webgardens)!</div>
-          <div class="site-button">
-		  	<a href="https://finchbones.neocities.org/" target="_blank"><img style="width: 100px; height: 100px;" src="https://finchbones.neocities.org/images/pot.png"></a>
-			<textarea><a href="https://finchbones.neocities.org/" target="_blank"><img src="https://finchbones.neocities.org/images/pot.png"</a></textarea>
-		  </div>
-        </div>
+
         
         
       </aside>
