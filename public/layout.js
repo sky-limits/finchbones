@@ -127,7 +127,6 @@ function footerHTML() {
           <div class="sidebar-title">about me</div>
           <p>18+, minors please DNI</p>
 
-          <div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=finchbones" defer></script>
         </div>
         <div class="sidebar-section">
           <div class="sidebar-title">My time and date</div>
