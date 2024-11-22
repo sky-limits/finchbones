@@ -158,6 +158,14 @@ function footerHTML() {
         </div>
     
 		
+        <div class="sidebar-section">
+          <div class="sidebar-title">What am I listening to?</div>
+          <!---scrobble--->
+          
+          <iframe style='height: 3.2cm; width: 9.2cm;' src='https://scrobble.observer/user/finchbones?theme=plain&dark'></iframe>
+          
+          <!---scrobble end--->
+        </div>
 
         
         
