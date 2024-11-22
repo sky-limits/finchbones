@@ -126,6 +126,8 @@ function footerHTML() {
         <div class="sidebar-section">
           <div class="sidebar-title">about me</div>
           <p>18+, minors please DNI</p>
+
+          <div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=finchbones" defer></script>
         </div>
         <div class="sidebar-section">
           <div class="sidebar-title">My time and date</div>
@@ -162,12 +164,15 @@ function footerHTML() {
           <div class="sidebar-title">What am I listening to?</div>
           <!---scrobble--->
           
-          <iframe style='height: 3.2cm; width: 9.2cm;' src='https://scrobble.observer/user/finchbones?theme=plain&dark'></iframe>
+          <iframe style='height: 3cm; width: 3cm;' src='https://scrobble.observer/user/finchbones?theme=plain&dark'></iframe>
           
           <!---scrobble end--->
         </div>
 
         
+
+
+
         
       </aside>
       
