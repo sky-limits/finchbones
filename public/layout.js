@@ -126,6 +126,7 @@ function footerHTML() {
         <div class="sidebar-section">
           <div class="sidebar-title">about me</div>
           <p>18+, minors please DNI</p>
+
         </div>
         <div class="sidebar-section">
           <div class="sidebar-title">My time and date</div>
@@ -158,8 +159,19 @@ function footerHTML() {
         </div>
     
 		
+        <div class="sidebar-section">
+          <div class="sidebar-title">What am I listening to?</div>
+          <!---scrobble--->
+          
+          <iframe style='height: 3cm; width: 3cm;' src='https://scrobble.observer/user/finchbones?theme=plain&dark'></iframe>
+          
+          <!---scrobble end--->
+        </div>
 
         
+
+
+
         
       </aside>
       

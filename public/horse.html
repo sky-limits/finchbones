@@ -8,9 +8,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="favicon.ico" rel="icon" type="image/x-icon" />
     <link href="style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://transmascring.netlify.app/tmring.css">
     <script src="layout.js"></script>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=IM+Fell+English" />
+    <style>
+        .grid-layout {
+  width: 100%;
+
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  grid-auto-flow: row dense;
+
+  justify-content: center;
+  align-content: center;
+}
+    </style>
     <script>
       // Template generated with petrapixel's layout generator.
       // Please do not remove this.
@@ -25,19 +38,18 @@
 	<noscript>Please enable JavaScript to view this website!</noscript>
 <main id="content">
         <section>
-        
-        <center>
-<a href="https://finchbones.neocities.org/stamps"><img src="https://finchbones.neocities.org/images/tumblr_880cde1297525449e343b3bde84f86d0_304aead7_100.png"></a>
-<a href="https://finchbones.neocities.org/blinkies"><img src="https://finchbones.neocities.org/images/tumblr_daa1b2cdb0e2bcf364dedf7c070b20ad_a33dbb2f_100.jpg"></a>
-<a href="https://finchbones.neocities.org/art_world"><img src="https://finchbones.neocities.org/images/descending_night_by_kicked_in_teeth-dbr9q3p.png"></a>
-<a href="https://finchbones.neocities.org/gradient"><img src="https://finchbones.neocities.org/images/tumblr_10ed1a03e76884b898420aa012c5152e_1f9a7fba_96.jpg"></a> 
-<a href="https://finchbones.neocities.org/the-crow"><img src="https://finchbones.neocities.org/images/The-crow-movie-logo.webp"></a>
-<a href="https://finchbones.neocities.org/horse">Model Horses</a>
-
-        </center>
-        
-        
-        </section>
+            <section class="grid-layout">
+                <div><img src="img"><a href="link">title</a></div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+              </section>
+            </section>
       </main>
 </div>
     <!-- Add any additional Javascript code (<script></script>) here. -->
