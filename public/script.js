@@ -14,8 +14,8 @@
 
 //==[ 1. BASIC INFO ]==
 
-let blogName = "therian thoughts";
-let authorName = "Elliot";
+let blogName = "dog with a blog";
+let authorName = "Finch";
 let authorLink = "https://neocities.org/site/finchbones"; // Enter your website, social media, etc. Some way for people to tell you they like your blog! (Leaving it empty is okay too)
 
 //-----------------------------
@@ -35,11 +35,11 @@ let postsArray = [
 //[ "posts/2020-11-10-My-Third-Post-Example.html" ],
 //[ "posts/2020-11-10-My-Second-Post-Example.html" ],
 // MUST BE IN YEAR, MONTH, DAY FORMAT
-[ "posts/2024-09-01-firstpost.html" ],
-[ "posts/2024-09-02-whatitmeanstome.html" ],
-[ "posts/2024-09-17-brundlefly.html" ], 
-[ "posts/2024-10-01-loving-when-youre-an-animal.html"],
-[ "posts/2024-10-03-time-time-and-time-again.html"]
+[ "" ],
+[ "" ],
+[ "" ], 
+[ ""],
+[ ""]
 ];
 
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
