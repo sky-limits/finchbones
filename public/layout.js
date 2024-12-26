@@ -111,7 +111,7 @@ function footerHTML() {
 	        <nav>
 	          <ul>
 	            <li><a href="https://finchbones.neocities.org">Home</a></li>
-	            <li><a href="https://finchbones.neocities.org/not_found">Blog (WIP)</a></li>
+	            <li><a href="https://finchbones.neocities.org/index-1">Blog</a></li>
 	            <li><a href="https://finchbones.neocities.org/artqueue">Art Queue</a></li>
 	            <li><a href="https://finchbones.neocities.org/oc_directory">OCs</a></li>
 	            <li><a href="https://finchbones.neocities.org/shrine">Shrines & Collections</a></li>
