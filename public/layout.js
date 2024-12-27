@@ -141,10 +141,10 @@ function footerHTML() {
         
 		<div class="sidebar-section">
           <marquee>
-		  	<a href="https://graphic.neocities.org/" target="_blank"><img src="https://finchbones.neocities.org/images/blinkies/stamps/tumblr_48eddd33be41c7a74fb77f3fbce6704e_fb60e50a_100.png"></a>
-		  	<a href="https://graphic.neocities.org/" target="_blank"><img src="https://finchbones.neocities.org/images/blinkies/stamps/tumblr_48eddd33be41c7a74fb77f3fbce6704e_fb60e50a_100.png""></a>
-		  	<a href="https://graphic.neocities.org/" target="_blank"><img src="https://finchbones.neocities.org/images/blinkies/stamps/tumblr_48eddd33be41c7a74fb77f3fbce6704e_fb60e50a_100.png""></a>
-		  	<a href="https://graphic.neocities.org/" target="_blank"><img src="https://finchbones.neocities.org/images/blinkies/stamps/tumblr_48eddd33be41c7a74fb77f3fbce6704e_fb60e50a_100.png""></a>
+		  	<img src="https://finchbones.neocities.org/images/blinkies/stamps/tumblr_81aa99e18bb73c638b8312c799ab953e_0bd9497a_100.png"></a>
+		  	<img src="https://finchbones.neocities.org/images/blinkies/stamps/tumblr_81aa99e18bb73c638b8312c799ab953e_0bd9497a_100.png"></a>
+		  	<img src="https://finchbones.neocities.org/images/blinkies/stamps/tumblr_81aa99e18bb73c638b8312c799ab953e_0bd9497a_100.png"></a>
+		  	<img src="https://finchbones.neocities.org/images/blinkies/stamps/tumblr_81aa99e18bb73c638b8312c799ab953e_0bd9497a_100.png"></a>
 		  </marquee>
         </div>
             
