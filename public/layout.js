@@ -168,13 +168,6 @@ function footerHTML() {
           <!---scrobble end--->
         </div>
 
-
-        <div class="sidebar-section">
-          <div class="sidebar-title">leave a comment!</div>
-          <div id="c_widget"></div>
-          <script src="https://finchbones.neocities.org/comment-widget-dark/comment-widget.js"></script>
-        </div>
-
         
 
 
