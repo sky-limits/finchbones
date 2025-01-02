@@ -36,7 +36,7 @@ let postsArray = [
 //[ "posts/2020-11-10-My-Second-Post-Example.html" ],
 // MUST BE IN YEAR, MONTH, DAY FORMAT
 [ "posts/2024-12-26-it lives!.html" ],
-[ "" ],
+[ "posts/2025-01-02-general-thoughts-on-life.html" ],
 [ "" ], 
 [ ""],
 [ ""]
