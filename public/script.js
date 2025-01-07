@@ -37,7 +37,7 @@ let postsArray = [
 // MUST BE IN YEAR, MONTH, DAY FORMAT
 [ "posts/2024-12-26-it lives!.html" ],
 [ "posts/2025-01-02-general-thoughts-on-life.html" ],
-[ "" ], 
+[ "2025-01-07-red-dead-redemption-2-act-I-part-I.html" ], 
 [ ""],
 [ ""]
 ];
