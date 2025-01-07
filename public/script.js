@@ -66,8 +66,8 @@ if ( url.includes("posts/") ) {
 }
 
 //Generate the Header HTML, a series of list items containing links.
-let headerHTML = '<ul> <li><a href="' + relativePath + '/index.html">Main Site</a></li>' + 
-'<li><a href="' + relativePath + '/index-1.html">Blog Home</a></li>' +
+let headerHTML = '<ul> <li><a href="' + relativePath + '/index-1.html">Blog Home</a></li>' +
+'<li><a href="' + relativePath + 'https://finchbones.com/index.html">Main Site</a></li>' +
 '<li><a href="' + relativePath + '/archive.html">Archive</a></li>' +
 '<li><a href="' + relativePath + '/about.html">About</a></li> </ul>';
 
