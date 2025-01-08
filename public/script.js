@@ -38,7 +38,7 @@ let postsArray = [
 [ "posts/2024-12-26-it lives!.html" ],
 [ "posts/2025-01-02-general-thoughts-on-life.html" ],
 [ "posts/2025-01-07-red-dead-redemption-2-act-I-part-I.html" ], 
-[ "posts/2025-01-08-about-that-time-again.html" ],
+[ "posts/2025-01-07-about-that-time-again.html" ],
 [ "" ]
 ];
 
