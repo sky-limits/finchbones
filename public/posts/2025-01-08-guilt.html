@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style>
+  @font-face {
+  font-family: 'Sketch Gothic School Regular';
+  src: url(https://finchbones.neocities.org/fonts/sketch_gothic_school-webfont.woff);
+}
+
+@font-face {
+  font-family: 'Primitive Regular';
+  src: url(https://finchbones.neocities.org/fonts/primitive/Primitive.ttf);
+}
+  </style>
+    <title>Blog Post</title> <!-- If you leave title as "Blog Post", it will automatically be updated to the post title -->
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> 
+    <link href="https://finchbones.neocities.org/zonelets.css" rel="stylesheet" type="text/css" media="all">    
+    <style>
+        #container {
+            display: none;
+            background-color: #f0f8ff;
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+
+    <form id="pswd">
+        <input type="password" id="validate" 
+               placeholder="Enter Password">
+        <button type="button" onclick="fun()">Submit</button>
+    </form>
+    <div id="container">
+        <div id="header">...</div>
+        <div id="content">
+          <h1 id="postTitleH1"></h1>
+          <h4 id="postDate"></h4>
+          
+          <p>I keep finding it impossible to not feel guilty about the things I've put him through. How do I even begin to forgive myself? How do I even begin to explain to him how sorry I am?
+<br>
+He says he's happy. I believe him, but I don't know how to......I don't know how to believe it deep down. I feel awful for coming into his life and taking him away from a community he had; 
+while not having fully taken him away from it, he is excused from a part of it now on purpose because of me. Because of me. 
+<br>
+I got in the way of him doing something he was excited for, I think at least, and I'm probably too in my head about it, but how else am I supposed to be about it? He says he's happy it was me, and not someone else.
+ But how do I know for sure? How do I know if he sees me as a burden, or as something in the way? How do I know?
+
+          </p>
+    <script>
+        function fun() {
+            let inputPswd = document.getElementById("validate")
+                                    .value;
+            let correctPswd = "4832";
+            if (inputPswd === correctPswd) {
+                document.getElementById("container")
+                    .style.display = "block";
+                document.getElementById("pswd")
+                    .style.display = "none";
+            } else {
+                alert("Incorrect password!");
+            }
+        }
+    </script>
+
+
+   
+      
+      
+    <div id="nextprev"></div>
+    </div> <!-- end of div id="content" -->
+    <div id="footer"></div>
+    </div> <!-- end of div id="container" -->
+  <!-- Here's the link to our JavaScript! -->
+  <script src="https://finchbones.neocities.org/script.js"></script>
+
+
+  </body>
+</html>
