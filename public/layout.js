@@ -112,9 +112,7 @@ function footerHTML() {
 	          <ul>
 	            <li><a href="https://finchbones.neocities.org">Home</a></li>
 	            <li><a href="https://finchbones.neocities.org/index-1">Blog</a></li>
-              <li><a href="https://finchbones.com/mood">Mood Tracker</a></li>
 	            <li><a href="https://finchbones.neocities.org/artqueue">Art Queue</a></li>
-	            <li><a href="https://finchbones.neocities.org/oc_directory">OCs</a></li>
 	            <li><a href="https://finchbones.neocities.org/shrine">Shrines & Collections</a></li>
 	            <li><a href="https://finchbones.neocities.org/credit_page">Credits</a></li>
 	          </ul>
