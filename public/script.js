@@ -40,7 +40,8 @@ let postsArray = [
 [ "posts/2025-01-07-red-dead-redemption-2-act-I-part-I.html" ], 
 [ "posts/2025-01-07-about-that-time-again.html" ],
 [ "posts/2025-01-08-guilt.html" ],
-[ "posts/2025-01-09-new-years-resolutions.html" ]
+[ "posts/2025-01-09-new-years-resolutions.html" ],
+[ "posts/2025-10-01-update-time.html" ]
 ];
 
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
