@@ -34,6 +34,69 @@ function loadLayoutByPetraPixel() {
   giveActiveClassToLinks();
 }
 
+function headerHTML() {
+  // ${nesting} outputs "./" or "../" depending on current page depth.
+  // You can use it to refer to images etc.
+  // Example: <img src="${nesting}img/logo.png"> might output <img src="../img/logo.png">
+
+
+  return `
+<header>
+
+        <div class="header-content">
+			<div class="header-title">⦅finchbones⦆</div>
+	        <nav>
+	          <ul>
+	            <li><a href="#">Home</a></li>
+	            <li><a href="#">Page 1</a></li>
+	            <li><a href="#">Page 2</a></li>
+	            <li><a href="#">Page 3</a></li>
+	            <li><a href="#">Page 5</a></li>
+	            <li><a href="#">Page 4</a></li>
+	          </ul>
+	        </>
+		</div>
+      </header>
+	  
+      <aside class="left-sidebar">
+	  
+        <div class="sidebar-section">
+          <div class="sidebar-title">testing</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>Necessit atibus perferendis inventore tempore vel optio similique blanditiis quasi quam?</p>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">testing 2</div>
+          <blockquote>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p>Necessit atibus perferendis inventore tempore vel optio similique blanditiis quasi quam?</p>
+          </blockquote>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Section Title</div>
+          <ul>
+            <li>List</li>
+            <li>List</li>
+            <li><a href="#">List</a></li>
+            <li>List</li>
+          </ul>
+        </div>
+		<div class="sidebar-section">
+          <div class="sidebar-title">Section Title</div>
+          <img class="full-width-image" src="https://picsum.photos/id/25/900/400">
+        </div>
+		<div class="sidebar-section">
+          <div class="sidebar-title">Section Title</div>
+          <div class="site-button">
+		  	<a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/img/linkback.gif" alt="petrapixel"></a>
+			<textarea><a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/img/linkback.gif" alt="petrapixel"></a></textarea>
+		  </div>
+        </div>
+      </aside>
+	
+      `;
+}
+
 
 function footerHTML() {
   // ${nesting} outputs "./" or "../" depending on current page depth.
