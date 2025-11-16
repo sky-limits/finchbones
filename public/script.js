@@ -43,7 +43,8 @@ let postsArray = [
 [ "posts/2025-01-09-new-years-resolutions.html" ],
 [ "posts/2025-10-01-update-time.html" ],
 [ "posts/2025-10-02-thinking-about-my-room.html" ],
-[ "posts/2025-11-02-kink,-life,-and-living-with-it.html" ]
+[ "posts/2025-11-02-kink,-life,-and-living-with-it.html" ],
+[ "posts/2025-11-16-PMDD.html" ]
 ];
 
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
