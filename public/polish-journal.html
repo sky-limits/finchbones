@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>⦅finchbones⦆</title>
+	<meta name="description" content="welcome to my den!" />
+  <style>
+
+body {
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  background: #f3e8d8;
+  margin: 0;
+  padding: 20px;
+  color: #2d2d2d;
+}
+.header-row { display:flex; gap:12px; align-items:center; margin-bottom:12px; flex-wrap:wrap; }
+#yearTabs { display:flex; gap:10px; }
+.year-tab {
+  padding:8px 12px; background:#fff7e6; border:2px solid #b49a7a; border-radius:8px; cursor:pointer; font-weight:700;
+}
+.year-tab.active { background:#f3d9a6; box-shadow: 0 2px 4px rgba(0,0,0,0.08); }
+.controls { display:flex; gap:10px; align-items:center; margin-left:auto; }
+.filter-box { border:2px solid #b49a7a; padding:8px; border-radius:8px; background:#fffaf3; display:flex; gap:8px; align-items:center; }
+
+/* journal container / pages */
+.journal-container {
+  width:100%; max-width:1100px; height:660px; margin:auto;
+  background:#fffaf3; border:3px solid #b49a7a; border-radius:10px; box-shadow:0 0 20px rgba(0,0,0,0.12);
+  position:relative; overflow:hidden;
+}
+.pages { display:flex; width:200%; height:100%; transform-style:preserve-3d; transition: transform 900ms cubic-bezier(.2,.8,.2,1); }
+.page { width:50%; padding:22px; box-sizing:border-box; display:grid; grid-template-columns: repeat(2,1fr); gap:14px; background: linear-gradient(#fffdf8,#fffaf3); }
+.month { background:#faf7f0; border:1px solid #e6ddcf; padding:12px; border-radius:8px; min-height:160px; display:flex; flex-direction:column; }
+.month h3 { margin:0 0 8px 0; font-size:16px; background:#f8e9c9; padding:6px 8px; border-radius:6px; display:inline-block; }
+.entry-container { display:flex; flex-wrap:wrap; gap:10px; align-items:flex-start; }
+
+/* entry */
+.entry { display:flex; flex-direction:column; align-items:center; width:140px; }
+.polish-img { width:140px; height:140px; border-radius:8px; background-size:cover; background-position:center; cursor:pointer; box-shadow:0 3px 6px rgba(0,0,0,0.18); }
+.info-box { display:none; background:#ffffffdd; border:1px solid #a89f93; padding:8px; margin-top:8px; border-radius:6px; font-size:13px; text-align:center; }
+
+/* nav buttons */
+.nav-button { position:absolute; top:50%; transform:translateY(-50%); padding:10px 14px; background:#f8e9c9; border:2px solid #b49a7a; cursor:pointer; border-radius:6px; font-size:18px; }
+#prevBtn { left:12px } #nextBtn { right:12px }
+
+/* modal */
+#modal { position:fixed; inset:0; background:rgba(0,0,0,0.6); display:none; justify-content:center; align-items:center; z-index:999; }
+#modal img { max-width:88%; max-height:88%; border:6px solid #fff; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.5); }
+
+/* tag list */
+#tagList { display:flex; gap:8px; flex-wrap:wrap; max-width:720px; }
+.tag-chip { padding:6px 8px; border-radius:999px; background:#fff; border:1px solid #d6c6b0; cursor:pointer; user-select:none; font-size:13px; }
+.tag-chip.selected { background:#f3d9a6; border-color:#b49a7a; font-weight:700; }
+
+/* small labels */
+.small { font-size:13px; opacity:0.9; }
+.empty { font-style:italic; opacity:0.7; }
+  </style>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="layout.js"></script>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=IM+Fell+English" />
+    <script>
+      // Template generated with petrapixel's layout generator.
+      // Please do not remove this.
+      console.log("%c Template generated with petrapixel's layout generator.", "font-size: 14pt;");
+      console.log("%c https://petrapixel.neocities.org/coding/layout-generator", "font-size: 14pt;");
+    </script>
+  </head>
+  <body>
+    <!-- The next line is a skip-to-content link for keyboard users. Do not remove it! -->
+    <a href="#content" id="skip-to-content-link">Skip to content</a>
+    <div class="layout">
+	<noscript>Please enable JavaScript to view this website!</noscript>
+<main id="content">
+
+    <div class="header-row">
+        <div id="yearTabs"></div>
+      
+        <div class="controls">
+          <div class="filter-box">
+            <label class="small" for="tagSelect">Filter tags:</label>
+            <!-- multi-select visible UI (native multiple select kept for accessibility/keyboard) -->
+            <select id="tagSelect" multiple size="3" style="min-width:160px;"></select>
+            <div style="display:flex;flex-direction:column;gap:6px;margin-left:8px;">
+              <label style="display:flex;align-items:center;gap:6px;"><input id="matchAll" type="checkbox"> <span class="small">Match all tags</span></label>
+              <button id="clearTags" style="padding:6px 8px;border-radius:6px;border:1px solid #b49a7a;background:#fffaf3;cursor:pointer;">Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="journal-container">
+        <div class="pages" id="pages"></div>
+        <button class="nav-button" id="prevBtn">◀</button>
+        <button class="nav-button" id="nextBtn">▶</button>
+      </div>
+      
+      <div id="modal"><img alt="fullsize"/></div>
+
+      </main>
+</div>
+    <!-- Add any additional Javascript code (<script></script>) here. -->
+
+    <script>
+
+/* State */
+let journalData = {};
+let currentPage = 0;
+let selectedYear = null;
+
+/* Tag filter state (array of strings). empty => show all */
+let selectedTags = [];
+let matchAll = false;
+
+/* DOM shortcuts */
+const pagesEl = document.getElementById('pages');
+const yearTabsEl = document.getElementById('yearTabs');
+const tagSelect = document.getElementById('tagSelect');
+const matchAllCheckbox = document.getElementById('matchAll');
+const clearBtn = document.getElementById('clearTags');
+
+/* Load JSON — change path if needed */
+fetch('manicures.json')
+  .then(r => {
+    if (!r.ok) throw new Error('manicures.json not found or not accessible');
+    return r.json();
+  })
+  .then(data => {
+    journalData = data;
+    buildYearTabs();
+    populateTagSelect();
+  })
+  .catch(err => {
+    console.error('Failed to load manicures.json', err);
+    pagesEl.innerHTML = '<div style="padding:20px;">Failed to load data. Check manicures.json path in fetch().</div>';
+  });
+
+/* Build year tabs */
+function buildYearTabs(){
+  const years = Object.keys(journalData);
+  yearTabsEl.innerHTML = '';
+  years.forEach((y, idx) => {
+    const tab = document.createElement('div');
+    tab.className = 'year-tab';
+    tab.textContent = y;
+    tab.onclick = () => {
+      selectedYear = y;
+      document.querySelectorAll('.year-tab').forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');
+      renderYear(y);
+    };
+    yearTabsEl.appendChild(tab);
+  });
+  if (years.length) {
+    selectedYear = years[0];
+    yearTabsEl.firstChild.classList.add('active');
+    renderYear(selectedYear);
+  } else {
+    pagesEl.innerHTML = '<div style="padding:20px;">No years found in JSON.</div>';
+  }
+}
+
+/* Populate the native multi-select with all tags found across years */
+function populateTagSelect(){
+  const tags = new Set();
+  Object.values(journalData).forEach(yearObj => {
+    Object.values(yearObj).forEach(monthArr => {
+      (monthArr || []).forEach(entry => {
+        (entry.tags || []).forEach(t => tags.add(t));
+      });
+    });
+  });
+  const sorted = Array.from(tags).sort((a,b)=>a.localeCompare(b, undefined, {sensitivity:'base'}));
+  tagSelect.innerHTML = '';
+  sorted.forEach(t => {
+    const opt = document.createElement('option');
+    opt.value = t;
+    opt.textContent = t.charAt(0).toUpperCase() + t.slice(1);
+    tagSelect.appendChild(opt);
+  });
+
+  // events
+  tagSelect.onchange = () => {
+    selectedTags = Array.from(tagSelect.selectedOptions).map(o => o.value);
+    renderYear(selectedYear);
+  };
+  matchAllCheckbox.onchange = () => {
+    matchAll = matchAllCheckbox.checked;
+    renderYear(selectedYear);
+  };
+  clearBtn.onclick = () => {
+    selectedTags = [];
+    matchAllCheckbox.checked = false;
+    matchAll = false;
+    // clear native select
+    Array.from(tagSelect.options).forEach(o=>o.selected=false);
+    renderYear(selectedYear);
+  };
+}
+
+/* Utility: returns true if entry's tags pass the current selectedTags filter
+   - if selectedTags is empty => true (show all)
+   - if matchAll = false => true if entry.tags has ANY selected tag
+   - if matchAll = true => true if entry.tags includes ALL selected tags
+*/
+function entryMatchesTags(entry){
+  if (!selectedTags || selectedTags.length === 0) return true;
+  const entryTags = entry.tags || [];
+  if (matchAll) {
+    return selectedTags.every(t => entryTags.includes(t));
+  } else {
+    return selectedTags.some(t => entryTags.includes(t));
+  }
+}
+
+/* Render a full year into the two-page spread */
+function renderYear(year){
+  const monthsObj = journalData[year] || {};
+  // Ensure month order
+  const ordered = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const monthsKeys = Object.keys(monthsObj);
+  const sorted = ordered.filter(m => monthsKeys.includes(m)).concat(monthsKeys.filter(m => !ordered.includes(m)));
+
+  pagesEl.innerHTML = '';
+  const page1 = document.createElement('div'); page1.className = 'page';
+  const page2 = document.createElement('div'); page2.className = 'page';
+
+  sorted.slice(0,6).forEach(m => page1.appendChild(makeMonthBlock(m, monthsObj[m] || [])));
+  sorted.slice(6).forEach(m => page2.appendChild(makeMonthBlock(m, monthsObj[m] || [])));
+
+  pagesEl.appendChild(page1);
+  pagesEl.appendChild(page2);
+  currentPage = 0;
+  pagesEl.style.transform = 'translateX(0)';
+}
+
+/* Create a month block DOM, applying tag filtering */
+function makeMonthBlock(name, entries){
+  const block = document.createElement('div'); block.className='month';
+  const h = document.createElement('h3'); h.textContent = name; block.appendChild(h);
+
+  const container = document.createElement('div'); container.className = 'entry-container';
+  block.appendChild(container);
+
+  // Add entries that match tags
+  const visible = (entries || []).filter(e => entryMatchesTags(e));
+  visible.forEach(entry => {
+    const wrap = document.createElement('div'); wrap.className = 'entry';
+    const img = document.createElement('div'); img.className = 'polish-img';
+    img.style.backgroundImage = `url('${entry.img}')`;
+
+    img.onclick = () => openModal(entry.img);
+
+    const info = document.createElement('div'); info.className = 'info-box'; info.textContent = entry.info || '';
+    img.addEventListener('mouseenter', () => info.style.display = 'block');
+    img.addEventListener('mouseleave', () => info.style.display = 'none');
+
+    // small tag badges under the image
+    if (entry.tags && entry.tags.length) {
+      const tagsWrap = document.createElement('div');
+      tagsWrap.style.marginTop = '6px';
+      tagsWrap.style.display = 'flex';
+      tagsWrap.style.gap = '6px';
+      tagsWrap.style.flexWrap = 'wrap';
+      entry.tags.slice(0,6).forEach(t => {
+        const chip = document.createElement('div');
+        chip.className = 'tag-chip';
+        chip.textContent = t;
+        chip.title = 'Click to toggle filter for this tag';
+        chip.onclick = (ev) => {
+          ev.stopPropagation();
+          toggleTagInSelect(t);
+        };
+        tagsWrap.appendChild(chip);
+      });
+      wrap.appendChild(tagsWrap);
+    }
+
+    wrap.appendChild(img);
+    wrap.appendChild(info);
+    container.appendChild(wrap);
+  });
+
+  if (container.children.length === 0) {
+    const empty = document.createElement('div'); empty.className = 'empty'; empty.textContent = 'No manicures for this month.';
+    container.appendChild(empty);
+  }
+
+  return block;
+}
+
+/* Toggle a tag on/off in the native multi-select (keeps keyboard accessibility) */
+function toggleTagInSelect(tag){
+  const opts = Array.from(tagSelect.options);
+  const target = opts.find(o => o.value === tag);
+  if (!target) return;
+  target.selected = !target.selected;
+  selectedTags = Array.from(tagSelect.selectedOptions).map(o=>o.value);
+  renderYear(selectedYear);
+}
+
+/* Modal */
+function openModal(src){
+  const modal = document.getElementById('modal');
+  modal.style.display = 'flex';
+  modal.querySelector('img').src = src;
+  setTimeout(()=> {
+    modal.onclick = () => { modal.style.display='none'; modal.querySelector('img').src=''; };
+  }, 0);
+}
+
+/* Navigation */
+document.getElementById('prevBtn').onclick = () => flipPage(-1);
+document.getElementById('nextBtn').onclick = () => flipPage(1);
+
+function flipPage(dir){
+  currentPage = Math.min(1, Math.max(0, currentPage + dir));
+  pagesEl.style.transform = `translateX(-${currentPage * 50}%)`;
+}
+
+    </script>
+  </body>
+</html>
