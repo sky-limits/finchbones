@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>⦅finchbones⦆</title>
+	<meta name="description" content="welcome to my den!" />
+  
+<!-- Shrine-style font -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        background: #111;
+        color: #eee;
+        font-family: 'Cinzel', serif;
+        text-align: center;
+        padding: 40px;
+        letter-spacing: 0.5px;
+    }
+
+    p {
+        font-family: 'Cinzel', serif !important;
+        letter-spacing: 1px !important;  
+        font-weight: 700 !important;
+        background: #222;
+        color: #eee;
+        padding: 12px 20px;
+        margin: 10px;
+        border-radius: 6px;
+        border: 1px solid #555;
+    }
+
+    h1 {
+        font-weight: 700;
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+        text-shadow: 0 0 8px rgba(255,255,255,0.2);
+    }
+
+    /* Guardian display container */
+    #guardianContainer {
+        width: 300px;
+        height: 300px;
+        margin: 20px auto;
+        position: relative;
+
+        /* TRUE center */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        opacity: 0;
+        transition: opacity 0.7s ease;
+        overflow: hidden;
+    }
+
+    #guardianImg {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 12px;
+        display: none;
+        object-fit: contain;
+    }
+
+    /* Ceremony animation */
+    .adopt-ceremony {
+        animation: adoptBurst 1.2s ease-out forwards;
+    }
+
+    @keyframes adoptBurst {
+        0% { transform: scale(1); filter: brightness(1); }
+        25% { transform: scale(1.18); filter: brightness(1.4); }
+        60% { transform: scale(1.05); filter: brightness(1.2); }
+        100% { transform: scale(1); filter: brightness(1); }
+    }
+
+    /* Sparkles */
+    .sparkle {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: radial-gradient(circle, white, transparent);
+        border-radius: 50%;
+        pointer-events: none;
+        animation: sparkleFloat 0.8s ease-out forwards;
+    }
+
+    @keyframes sparkleFloat {
+        0% { opacity: 1; transform: scale(1) translateY(0); }
+        100% { opacity: 0; transform: scale(0.3) translateY(-40px); }
+    }
+
+    /* Buttons */
+    .button {
+        background: #222;
+        color: white;
+        padding: 12px 20px;
+        margin: 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        border: 1px solid #555;
+        font-family: 'Cinzel', serif;
+        letter-spacing: 1px;
+        transition: 0.2s;
+    }
+
+    .button:hover:not(:disabled) {
+        background: #333;
+        box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    }
+
+    .button:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+
+    #downloadBtn { display: none; }
+</style>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="layout.js"></script>
+    <script>
+      // Template generated with petrapixel's layout generator.
+      // Please do not remove this.
+      console.log("%c Template generated with petrapixel's layout generator.", "font-size: 14pt;");
+      console.log("%c https://petrapixel.neocities.org/coding/layout-generator", "font-size: 14pt;");
+    </script>
+  </head>
+  <body>
+    <!-- The next line is a skip-to-content link for keyboard users. Do not remove it! -->
+    <a href="#content" id="skip-to-content-link">Skip to content</a>
+    <div class="layout">
+	<noscript>Please enable JavaScript to view this website!</noscript>
+<main id="content">
+
+        <section>
+            <center>
+  
+                <p>An e1dol can protect your website. Brought to life by <a href="https://m0r1bund.com/about/">1ore</a>, at <a href="https://m0r1bund.com/">m0r1bund.com</a> Find one here, but be wary - you may only claim one e1dol, and only one may claim you. <br><br> You can pass them by as many times as you like; but can only accept their company once.</p>
+                <br>
+                </center>
+              <button id="rollBtn" class="button">Summon an E1dol</button>
+              
+              <div id="guardianContainer">
+                  <img id="guardianImg" src="">
+              </div>
+              
+              <div>
+                  <button id="acceptBtn" class="button" style="display:none;">Accept Guardianship</button>
+                  <button id="passBtn" class="button" style="display:none;">Pass By</button>
+              </div>
+              
+              <button id="downloadBtn" class="button">Download E1dol</button>
+              
+              <canvas id="canvas" width="800" height="800" style="display:none;"></canvas>
+              
+                <center>
+                  <p>Find more information on e1dol <a href="https://m0r1bund.com/e1dolatry/">here.</a></p>
+                </center>
+</section>
+
+
+
+
+      </main>
+</div>
+    <!-- Add any additional Javascript code (<script></script>) here. -->
+    <script>
+        /* ---- Replace with your actual guardian image paths ---- */
+        let guardianImages = [
+            "summons/e1dol1.png",
+            "summons/e1dol2.png",
+            "summons/e1dol3.png",
+            "summons/e1dol4.png",
+            "summons/e1dol5.png",
+            "summons/e1dol6.png",
+            "summons/e1dol7.png",
+            "summons/e1do18.png",
+            "summons/e1dol9.png",
+            "summons/e1dol10.png"
+        ];
+        
+        let currentGuardian = null;
+        
+        /* DOM elements */
+        const guardianImg = document.getElementById("guardianImg");
+        const container = document.getElementById("guardianContainer");
+        const rollBtn = document.getElementById("rollBtn");
+        const acceptBtn = document.getElementById("acceptBtn");
+        const passBtn = document.getElementById("passBtn");
+        const downloadBtn = document.getElementById("downloadBtn");
+        
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        
+        /* Fade in helper */
+        function fadeInImage() {
+            guardianImg.style.display = "block";
+            container.style.opacity = "1";
+        }
+        
+        /* Sparkle burst */
+        function spawnSparkles() {
+            for (let i = 0; i < 12; i++) {
+                const s = document.createElement("div");
+                s.classList.add("sparkle");
+                s.style.left = (150 + Math.random()*100 - 50) + "px";
+                s.style.top = (150 + Math.random()*100 - 50) + "px";
+                container.appendChild(s);
+                setTimeout(() => s.remove(), 900);
+            }
+        }
+        
+        /* Roll guardian */
+        function rollGuardian() {
+            if (guardianImages.length === 0) {
+                alert("All E1dol have already found keepers.");
+                return;
+            }
+        
+            const randomIndex = Math.floor(Math.random() * guardianImages.length);
+            currentGuardian = guardianImages[randomIndex];
+        
+            guardianImg.style.display = "none";
+            container.style.opacity = "0";
+        
+            setTimeout(() => {
+                guardianImg.src = currentGuardian;
+        
+                setTimeout(() => fadeInImage(), 50);
+        
+            }, 150);
+        
+            acceptBtn.style.display = "inline-block";
+            passBtn.style.display = "inline-block";
+            downloadBtn.style.display = "none";
+        }
+        
+        rollBtn.addEventListener("click", rollGuardian);
+        passBtn.addEventListener("click", rollGuardian);
+        
+        /* Accept guardian */
+        acceptBtn.addEventListener("click", () => {
+            container.classList.add("adopt-ceremony");
+            spawnSparkles();
+            downloadBtn.style.display = "inline-block";
+        
+            // Lock shrine actions
+            rollBtn.disabled = true;
+            passBtn.disabled = true;
+        
+            rollBtn.style.opacity = "0.4";
+            passBtn.style.opacity = "0.4";
+        });
+        
+        /* Download with nickname */
+        downloadBtn.addEventListener("click", () => {
+            const name = prompt("Name your E1dol:");
+        
+            if (!name) return;
+        
+            const img = new Image();
+            img.crossOrigin = "anonymous";
+            img.src = currentGuardian;
+        
+            img.onload = function() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        
+                // Guardian name on image
+                ctx.font = "48px Cinzel";
+                ctx.fillStyle = "white";
+                ctx.textAlign = "center";
+                ctx.fillText(name, canvas.width / 2, canvas.height - 40);
+        
+                const link = document.createElement("a");
+                link.download = `${name}.png`;
+                link.href = canvas.toDataURL();
+                link.click();
+            };
+        
+            // Remove adopted guardian from pool
+            guardianImages = guardianImages.filter(src => src !== currentGuardian);
+        
+            // Hide shrine controls permanently
+            rollBtn.style.display = "none";
+            passBtn.style.display = "none";
+            acceptBtn.style.display = "none";
+            downloadBtn.style.display = "none";
+        
+            alert("Your E1dol has chosen you. The shrine falls silent.");
+        });
+        </script>
+  </body>
+</html>
