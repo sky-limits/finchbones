@@ -30,6 +30,55 @@
 .imgtxt:hover img, .imgtxt:focus img {
   /* add hover effects like transform or filter to your images here! */
 }
+
+   /* Container for the sticky pagedoll */
+   #pagedoll {
+              position: fixed;
+              left: 0;
+              bottom: 0; /* stick to bottom-left */
+              z-index: 9999;
+              cursor: pointer;
+              display: flex;
+              align-items: flex-end;
+              justify-content: flex-start;
+            
+              max-width: 300px;
+              max-height: 100px;
+              width: auto;
+              height: auto;
+              padding: 0;
+            }
+            
+            /* Image */
+            #pagedoll img {
+              max-width: 100%;
+              max-height: 100%;
+              height: auto;
+              width: auto;
+              object-fit: contain;
+              transition: transform 0.25s ease;
+            }
+            
+            /* Bounce on hover */
+            #pagedoll:hover img {
+              animation: bounce 0.4s ease;
+            }
+            
+            /* Bounce keyframes */
+            @keyframes bounce {
+              0%   { transform: scale(1); }
+              30%  { transform: scale(1.12); }
+              60%  { transform: scale(0.92); }
+              100% { transform: scale(1); }
+            }
+            
+            /* Extra responsiveness */
+            @media (max-width: 500px) {
+              #pagedoll {
+                max-width: 200px;
+                max-height: 70px;
+              }
+            }
 	
   </style>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
@@ -55,6 +104,13 @@
 
         <section>
         
+            
+            <div id="pagedoll">
+              <a href="https://m0r1bund.com/e1dolatry/"><img src="https://finchbones.com/images/to%20go%20on%20site/i%20do%20not%20see%20it.png" alt="Pagedoll"></a>
+            </div>
+            
+            
+
 <center>
   <div 
   style="
@@ -198,5 +254,14 @@
       </main>
 </div>
     <!-- Add any additional Javascript code (<script></script>) here. -->
+
+    <script>
+       /* Add bounce on click */
+       document.getElementById("pagedoll").addEventListener("click", function() {
+              const img = this.querySelector("img");
+              img.style.animation = "bounce 0.4s ease";
+              setTimeout(() => { img.style.animation = ""; }, 400);
+            });
+    </script>
   </body>
 </html>
