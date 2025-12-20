@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>⦅finchbones⦆</title>
+	<meta name="description" content="welcome to my den!" />
+    <style>
+        /* -----------------
+           GENERAL
+        ----------------- */
+        * { box-sizing: border-box; }
+        body { margin:0; font-family: system-ui, sans-serif; background:#111; color:#eee; }
+        a { text-decoration: none; color: inherit; }
+        .container { display:flex; min-height:100vh; }
+        
+        /* -----------------
+           SIDEBAR
+        ----------------- */
+        .sidebar {
+          width:220px; background:#1c1c1c; padding:16px; position:sticky; top:0;
+        }
+        .sidebar .name { font-size:1.3em; margin-bottom:16px; }
+        .sidebar nav a { display:block; padding:8px 0; color:#ccc; }
+        .sidebar nav a:hover { color:#fff; }
+        
+        /* -----------------
+           CONTENT
+        ----------------- */
+        .content { flex:1; padding:20px; }
+        section { margin-bottom:48px; }
+        h2 { border-bottom:1px solid #333; padding-bottom:6px; }
+        
+        /* -----------------
+           FAMILY TREE
+        ----------------- */
+        .family-tree { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; }
+        .family-node { background:#1e1e1e; padding:8px; text-align:center; border-radius:6px; }
+        
+        /* -----------------
+           RELATIONSHIPS
+        ----------------- */
+        .relationship { margin-bottom:14px; }
+        .meter { background:#333; height:12px; border-radius:6px; overflow:hidden; }
+        .meter-fill { height:100%; }
+        .meter-fill.positive { background:#6fda6f; }
+        .meter-fill.neutral  { background:#d7ba7d; }
+        .meter-fill.negative { background:#e06c75; }
+        
+        /* -----------------
+           GALLERY
+        ----------------- */
+        .tabs { margin-bottom:10px; }
+        .tabs button { background:#222; border:none; color:#ccc; padding:6px 10px; margin-right:4px; cursor:pointer; }
+        .tabs button.active { background:#444; color:#fff; }
+        .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; }
+        .gallery img { width:100%; border-radius:4px; }
+        .literature { grid-column: span 2; background:#1e1e1e; padding:10px; border-radius:6px; }
+        .literature .excerpt { margin-bottom:6px; }
+        .literature .full-text { display:none; margin-top:6px; }
+        
+        /* -----------------
+           ARPG TRACKER
+        ----------------- */
+        .tracker-entry { background:#1e1e1e; padding:10px; margin-bottom:8px; border-radius:6px; }
+        .tracker-entry span { font-size:0.9em; color:#aaa; }
+        
+        /* -----------------
+           MOBILE
+        ----------------- */
+        @media(max-width:768px){ .container{flex-direction:column;} .sidebar{width:100%; position:relative;} }
+        </style>
+<script>
+    // Template generated with petrapixel's layout generator.
+    // Please do not remove this.
+    console.log("%c Template generated with petrapixel's layout generator.", "font-size: 14pt;");
+    console.log("%c https://petrapixel.neocities.org/coding/layout-generator", "font-size: 14pt;");
+  </script>
+</head>
+<body>
+<div class="container">
+  <aside class="sidebar">
+    <small><a href="https://finchbones.com/arravani.html">Back to home</a></small>
+    <h2 class="name">Vaelstra</h2>
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#family">Family</a>
+      <a href="#relationships">Relationships</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#tracker">ARPG Log</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <section id="overview">
+      <h2>Overview</h2>
+      <i>violent chaser of storms and stallions</i>>
+      <p>mare | lesbian</p>
+      <p>A wild spirited mare, with teeth aplenty and a heart shut off and cold.</p>
+
+    </section>
+
+    <section id="family">
+      <h2>Family Tree</h2>
+      <div id="familyTree" class="family-tree"></div>
+    </section>
+
+    <section id="relationships">
+      <h2>Relationships</h2>
+      <div id="relationshipList"></div>
+    </section>
+
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="tabs">
+        <button data-filter="all" class="active">All</button>
+        <button data-filter="art">Art</button>
+        <button data-filter="writing">Writing</button>
+      </div>
+      <div id="galleryGrid" class="gallery"></div>
+    </section>
+
+    <section id="tracker">
+      <h2>ARPG Tracker</h2>
+      <div id="activityLog" class="tracker"></div>
+    </section>
+  </main>
+</div>
+
+<script>
+/* ======================
+   DATA — EDIT PER PAGE
+====================== */
+const FAMILY = {
+  sire:"Unknown Stallion",
+  dam:"Unknown Mare",
+  children:["Twin 1","Twin 2"]
+};
+const RELATIONSHIPS = [
+ // {name:"Mist", value:75}
+];
+const GALLERY_ITEMS = [
+  {type:"art", src:"https://f2.toyhou.se/file/f2-toyhou-se/images/111659812_G9ZUpfDz94vAvUF.png"},
+
+];
+const ARPG_LOG = [
+  {activity:"Exploration", result:"Successful - 12 Drachma | Leather Scraps | Gemstone", date:"12-10-2025"},
+  {activity:"Pit Fight", result:"Minor injury", date:"2025-03-02"}
+];
+
+/* ======================
+   FAMILY TREE
+====================== */
+const familyTree = document.getElementById("familyTree");
+function addFamilyNode(label,name){
+  const div=document.createElement("div");
+  div.className="family-node";
+  div.innerHTML=`<strong>${label}</strong><br>${name}`;
+  familyTree.appendChild(div);
+}
+addFamilyNode("Sire",FAMILY.sire);
+addFamilyNode("Dam",FAMILY.dam);
+FAMILY.children.forEach(child=>addFamilyNode("Child",child));
+
+/* ======================
+   RELATIONSHIPS
+====================== */
+const relationshipList=document.getElementById("relationshipList");
+RELATIONSHIPS.forEach(r=>{
+  const div=document.createElement("div");
+  div.className="relationship";
+  const status = r.value>25?"positive":r.value<-25?"negative":"neutral";
+  div.innerHTML=`<strong>${r.name}</strong> (${r.value})
+    <div class="meter"><div class="meter-fill ${status}" style="width:${Math.abs(r.value)}%"></div></div>`;
+  relationshipList.appendChild(div);
+});
+
+/* ======================
+   GALLERY FILTERS + EXPANDABLE LITERATURE
+====================== */
+const galleryGrid=document.getElementById("galleryGrid");
+const buttons=document.querySelectorAll(".tabs button");
+
+function renderGallery(filter){
+  galleryGrid.innerHTML="";
+  GALLERY_ITEMS.filter(item=>filter==="all"||item.type===filter).forEach(item=>{
+    if(item.type==="art"){
+      const img=document.createElement("img");
+      img.src=item.src;
+      galleryGrid.appendChild(img);
+    } else {
+      const div=document.createElement("div");
+      div.className="literature";
+      div.innerHTML=`
+        <h3>${item.title}</h3>
+        <p class="excerpt">${item.excerpt}</p>
+        <div class="full-text"><p>${item.fullText.replace(/\n/g,'</p><p>')}</p></div>
+        <button class="toggle-text">Read more</button>
+      `;
+      galleryGrid.appendChild(div);
+    }
+  });
+
+  // attach toggle functionality
+  document.querySelectorAll('.toggle-text').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const fullText=btn.parentElement.querySelector('.full-text');
+      if(fullText.style.display==='block'){
+        fullText.style.display='none';
+        btn.textContent='Read more';
+      } else {
+        fullText.style.display='block';
+        btn.textContent='Read less';
+      }
+    });
+  });
+}
+
+buttons.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    buttons.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    renderGallery(btn.dataset.filter);
+  });
+});
+
+renderGallery("all");
+
+/* ======================
+   ARPG TRACKER
+====================== */
+const activityLog=document.getElementById("activityLog");
+ARPG_LOG.forEach(entry=>{
+  const div=document.createElement("div");
+  div.className="tracker-entry";
+  div.innerHTML=`<strong>${entry.activity}</strong> <span>${entry.date}</span><p>${entry.result}</p>`;
+  activityLog.appendChild(div);
+});
+
+/* ======================
+   SMOOTH SCROLL
+====================== */
+document.querySelectorAll('.sidebar a').forEach(link=>{
+  link.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelector(link.getAttribute('href'))
+      .scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
