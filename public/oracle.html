@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>⦅finchbones⦆</title>
+	<meta name="description" content="welcome to my den!" />
+  <style>
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--stone);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* ---------- GLYPH BACKGROUND ---------- */
+.glyph-bg {
+    position: relative;
+    color: white;
+    inset: 0;
+    font-size: 14px;
+    letter-spacing: 3px;
+    opacity: 0.08;
+    line-height: 2;
+    pointer-events: none;
+    animation: glyphFade 18s ease-in-out infinite;
+    white-space: pre-wrap;
+    text-align: center;
+}
+
+@keyframes glyphFade {
+    0%,100% { opacity: 0.04; }
+    50% { opacity: 0.12; }
+}
+
+/* ---------- ORACLE CONTAINER ---------- */
+.oracle {
+    position: relative;
+    width: 92%;
+    max-width: 520px;
+    padding: 22px;
+    box-shadow: 0 0 50px;
+    text-align: center;
+    animation: breathe 6s ease-in-out infinite;
+}
+
+@keyframes breathe {
+    0%,100% { box-shadow: 0 0 40px; }
+    50% { box-shadow: 0 0 60px; }
+}
+
+h1 {
+    font-size: clamp(22px, 5vw, 28px);
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: 12px;
+    opacity: 0.7;
+    font-style: italic;
+    margin-bottom: 14px;
+}
+
+/* ---------- IMAGE ---------- */
+.oracle-face img {
+    width: 100%;
+    max-width: 240px;
+    border: 1px solid;
+    margin-bottom: 14px;
+}
+
+/* ---------- QUESTION TYPE ---------- */
+select {
+    width: 100%;
+    border: 1px solid;
+    padding: 8px;
+    margin-bottom: 14px;
+}
+
+/* ---------- PROPHECY ---------- */
+.prophecy {
+    border: 1px solid;
+    padding: 18px;
+    min-height: 110px;
+    animation: textFade 0.8s ease;
+}
+
+@keyframes textFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.translation {
+    font-size: 11px;
+    opacity: 0.55;
+    font-style: italic;
+    margin-top: 8px;
+}
+
+/* ---------- BUTTON ---------- */
+button {
+    margin-top: 16px;
+    padding: 10px 18px;
+    background: none;
+    color: var(--stone);
+    border: 1px solid;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: rgba(255,255,255,0.06);
+}
+
+/* ---------- RUINS AWAKEN ---------- */
+.awaken {
+    animation: awakenPulse 2s ease infinite;
+    border-color: var(--awaken);
+}
+
+@keyframes awakenPulse {
+    0%,100% { box-shadow: 0 0 25px rgba(201,179,126,0.2); }
+    50% { box-shadow: 0 0 60px rgba(201,179,126,0.6); }
+}
+
+.footer {
+    margin-top: 12px;
+    font-size: 10px;
+    opacity: 0.5;
+}
+  </style>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="layout.js"></script>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=IM+Fell+English" />
+    <script>
+      // Template generated with petrapixel's layout generator.
+      // Please do not remove this.
+      console.log("%c Template generated with petrapixel's layout generator.", "font-size: 14pt;");
+      console.log("%c https://petrapixel.neocities.org/coding/layout-generator", "font-size: 14pt;");
+    </script>
+  </head>
+  <body>
+    <!-- The next line is a skip-to-content link for keyboard users. Do not remove it! -->
+    <a href="#content" id="skip-to-content-link">Skip to content</a>
+    <div class="layout">
+	<noscript>Please enable JavaScript to view this website!</noscript>
+<main id="content">
+
+        <section>
+            <center>
+                
+<div class="glyph-bg">
+    THRAE·KALITH·ENOR  
+    SAI·VENARA·ITH  
+    OMN·RESEN·THAL  
+    VEN·THAL·OMN  
+    KAI·RESEN·MORA  
+    ITH·MORA·VEN
+    </div>
+    
+    <div class="oracle" id="oracleBox">
+    
+    <h1>ORACLE OF WHAT REMAINS</h1>
+    <div class="subtitle">The future does not speak. The past does.</div>
+    
+    <div class="oracle-face">
+    <img src="https://f2.toyhou.se/file/f2-toyhou-se/images/112905847_IcBqpzIvDI454cN.png" alt="The Oracle">
+    </div>
+    
+    <select id="questionType">
+    <option value="general">Seek General Guidance</option>
+    <option value="choice">Ask About a Choice</option>
+    <option value="grief">Ask About Loss</option>
+    <option value="action">Ask What You Must Do</option>
+    </select>
+    
+    <div class="prophecy" id="prophecy">
+    Step forward. The ruins listen.
+    </div>
+    
+    <div class="translation" id="translation">
+    “Here the broken still speak.”
+    </div>
+    
+    <button onclick="consultOracle()">Consult the Oracle</button>
+    
+    <div class="footer">⟡ THAL·VEN·OMN ⟡</div>
+    
+    </div>
+            </center>
+        </section>
+
+
+
+
+      </main>
+</div>
+    <!-- Add any additional Javascript code (<script></script>) here. -->
+
+    <script>
+        const prophecyPools = {
+    general: [
+        "What you are avoiding already knows your name.",
+        "You are not lost. You are between.",
+        "The answer changes depending on when you ask it.",
+        "What feels unfinished is not demanding completion—only attention.",
+        "You will return to this moment with different eyes.",
+        "Something familiar is about to feel strange. Let it.",
+        "The future has noticed your hesitation.",
+        "This path was shaped by those who doubted, not those who knew.",
+        "You are closer than you think, but not to what you expect.",
+        "What remains is enough to begin."
+    ],
+
+    choice: [
+        "Not choosing is still a choice. It simply arrives later.",
+        "You will be offered certainty soon. Decline it.",
+        "The path behind you is not closed. It is watching.",
+        "Both roads cost you something. Only one costs you yourself.",
+        "You already know which choice frightens you more.",
+        "Delay will not soften the consequence.",
+        "What you choose will ask to be defended.",
+        "There is no correct answer—only an honest one.",
+        "You may choose wrongly and still be whole.",
+        "The stone does not judge the footstep. It remembers it."
+    ],
+
+    grief: [
+        "This grief does not make you fragile.",
+        "You will mourn something that never truly existed. This grief is still real.",
+        "There is a version of you that already forgave this.",
+        "What you lost changed you before it left.",
+        "You are allowed to miss what hurt you.",
+        "This pain is not proof of failure.",
+        "What you bury still shapes the ground above it.",
+        "Grief is not a weight. It is a tether.",
+        "You do not have to be finished with this yet.",
+        "The dead are not gone. They are quieter."
+    ],
+
+    action: [
+        "Go now. Waiting will change nothing.",
+        "Stand. The ground is firm enough.",
+        "You will act before you understand why.",
+        "What you do next will not feel brave until later.",
+        "Move before doubt reorganizes itself.",
+        "Your hesitation is louder than your fear.",
+        "This requires effort, not certainty.",
+        "Act gently. The consequence will linger.",
+        "You are being asked, not commanded.",
+        "Begin. The rest will follow."
+    ]
+};
+
+
+const rareProphecies = [
+    "When the ruins speak your name, do not answer aloud. Listen.",
+    "The stone beneath you has seen empires hesitate. You are not weaker for trembling.",
+    "You will leave something behind without realizing it was an offering.",
+    "This moment will divide your life into before and after.",
+    "You are standing where something ancient failed. Learn from it.",
+    "What you seek has already survived its own ending.",
+    "The Oracle does not see your future—but the ruins remember its cost.",
+    "You will be misunderstood, and it will matter less than you fear.",
+    "This is not the first time you have been here.",
+    "Even the ruins do not know how this ends."
+];
+
+
+const translations = [
+    "“Certainty is not promised.”",
+    "“Interpretation is your burden.”",
+    "“Memory outlives intention.”",
+    "“The Oracle is also bound.”"
+];
+
+function consultOracle() {
+    const oracleBox = document.getElementById("oracleBox");
+    oracleBox.classList.remove("awaken");
+
+    const type = document.getElementById("questionType").value;
+    let pool = prophecyPools[type];
+
+    if (Math.random() > 0.9) {
+        pool = rareProphecies;
+        oracleBox.classList.add("awaken");
+    }
+
+    const prophecy = pool[Math.floor(Math.random() * pool.length)];
+    const translation = translations[Math.floor(Math.random() * translations.length)];
+
+    document.getElementById("prophecy").textContent = prophecy;
+    document.getElementById("translation").textContent = translation;
+}
+    </script>
+  </body>
+</html>
