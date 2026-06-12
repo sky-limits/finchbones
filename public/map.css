@@ -20,6 +20,9 @@
 body.map-page {
   margin: 0;
   min-height: 100vh;
+  /* Override the site-wide light "paper" background image so the
+     light text below stays readable against the dark den color. */
+  background-image: none;
   background-color: #1e4865;
   color: #d0d3fb;
   display: flex;
