@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>⦅finchbones⦆ - map</title>
+    <meta name="description" content="welcome to my den!" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="style.css" rel="stylesheet" />
+    <link href="map.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=IM+Fell+English" />
+  </head>
+  <body class="map-page">
+    <!-- The next line is a skip-to-content link for keyboard users. Do not remove it! -->
+    <a href="#map-links" id="skip-to-content-link">Skip to map links</a>
+
+    <div class="map-intro">
+      <h1>welcome to my den!</h1>
+      <p>Click around the picture to explore, or use the list below.</p>
+    </div>
+
+    <!--
+      MAP SCENE
+      Each <a> below is an invisible "hotspot" placed over an object in the
+      picture. Its position/size is controlled in map.css (look for the
+      matching class name, e.g. ".hotspot-painting"). To change where a
+      link goes, just edit the href. To change the label, edit the text
+      inside <span class="hotspot-label">.
+    -->
+    <div class="map-scene">
+      <img
+        class="map-bg"
+        src="images/map-bg.jpg"
+        alt="An illustrated den scene in a dark forest, with a painting, a gothic window, a note, a unicorn figurine, a heart-shaped box, mushroom jars, a stack of books, a love spell wand, and an old computer."
+      />
+
+      <a class="hotspot hotspot-painting" href="art_world.html">
+        <span class="hotspot-label">art</span>
+      </a>
+
+      <a class="hotspot hotspot-window" href="shrine.html">
+        <span class="hotspot-label">shrine</span>
+      </a>
+
+      <a class="hotspot hotspot-notepaper" href="aboutme.html">
+        <span class="hotspot-label">about</span>
+      </a>
+
+      <a class="hotspot hotspot-unicorn" href="horses.html">
+        <span class="hotspot-label">horses</span>
+      </a>
+
+      <a class="hotspot hotspot-heartbox" href="stamps.html">
+        <span class="hotspot-label">treasures</span>
+      </a>
+
+      <a class="hotspot hotspot-mushroomjars" href="cookbook.html">
+        <span class="hotspot-label">cookbook</span>
+      </a>
+
+      <a class="hotspot hotspot-bookstack" href="library.html">
+        <span class="hotspot-label">library</span>
+      </a>
+
+      <a class="hotspot hotspot-wand" href="summoning-circle.html">
+        <span class="hotspot-label">spells</span>
+      </a>
+
+      <a class="hotspot hotspot-computer" href="archive.html">
+        <span class="hotspot-label">archive</span>
+      </a>
+    </div>
+
+    <!--
+      FALLBACK LINK LIST
+      A plain text version of every link above, for mobile, accessibility,
+      and anyone who can't see/use the picture.
+    -->
+    <nav id="map-links" aria-label="Map page links">
+      <h2>Map links</h2>
+      <ul class="map">
+        <li class="map"><a href="art_world.html">art</a></li>
+        <li class="map"><a href="shrine.html">shrine</a></li>
+        <li class="map"><a href="aboutme.html">about</a></li>
+        <li class="map"><a href="horses.html">horses</a></li>
+        <li class="map"><a href="stamps.html">treasures</a></li>
+        <li class="map"><a href="cookbook.html">cookbook</a></li>
+        <li class="map"><a href="library.html">library</a></li>
+        <li class="map"><a href="summoning-circle.html">spells</a></li>
+        <li class="map"><a href="archive.html">archive</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
