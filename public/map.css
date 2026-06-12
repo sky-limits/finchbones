@@ -1,0 +1,198 @@
+/* ==========================================================================
+   map.html — prototype imagemap homepage styles
+   ==========================================================================
+
+   HOW TO EDIT A HOTSPOT (no coding knowledge needed!):
+
+   Each clickable zone below has four numbers: top, left, width, height.
+   They are all percentages of the background picture, so:
+     - "top: 10%"  means "start 10% of the way down the picture"
+     - "left: 5%"  means "start 5% of the way across the picture"
+     - "width"/"height" control how big the clickable box is.
+
+   To move a hotspot, change "top"/"left".
+   To resize a hotspot, change "width"/"height".
+   The numbers don't have to be perfect — they just need to roughly cover
+   the object in the picture. You can preview changes by opening map.html
+   in a browser and turning on "outline" below (see DEBUG section).
+   ========================================================================== */
+
+body.map-page {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #1e4865;
+  color: #d0d3fb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "IM Fell English", serif;
+}
+
+/* The scene wraps the background picture and all the hotspots.
+   Its height is tied to its width using aspect-ratio, so the picture
+   (and every hotspot on top of it) scales together at any screen size. */
+.map-scene {
+  position: relative;
+  width: 100%;
+  max-width: 1600px;
+  aspect-ratio: 3 / 2; /* matches the 1920x1280 background image */
+  margin: 0 auto;
+}
+
+.map-bg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.map-intro {
+  text-align: center;
+  padding: 1em;
+  max-width: 40em;
+}
+
+.map-intro h1 {
+  font-family: "IM Fell English", serif;
+}
+
+/* ==========================================================================
+   HOTSPOTS
+   Each hotspot is an invisible clickable box placed over an object in the
+   picture. Hovering or focusing it shows a little label.
+   ========================================================================== */
+
+.hotspot {
+  position: absolute;
+  display: block;
+  text-decoration: none;
+  /* Uncomment the line below to see the hotspot boxes while editing: */
+  /* outline: 1px dashed #d0d3fb; */
+}
+
+.hotspot-label {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%);
+  margin-bottom: 0.4em;
+  padding: 0.25em 0.6em;
+  white-space: nowrap;
+  background-color: #1e5e7d;
+  color: #d0d3fb;
+  border: 2px solid #4587c9;
+  border-radius: 4px;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+  pointer-events: none;
+}
+
+.hotspot:hover .hotspot-label,
+.hotspot:focus .hotspot-label,
+.hotspot:focus-visible .hotspot-label {
+  opacity: 1;
+}
+
+.hotspot:focus-visible {
+  outline: 2px solid #7780ec;
+  outline-offset: 2px;
+}
+
+/* --- Individual hotspot positions (top / left / width / height) --- */
+
+/* painting -> art_world.html */
+.hotspot-painting {
+  top: 1%;
+  left: 4%;
+  width: 21%;
+  height: 39%;
+}
+
+/* gothic window -> shrine.html */
+.hotspot-window {
+  top: 11%;
+  left: 74%;
+  width: 19%;
+  height: 35%;
+}
+
+/* note paper -> aboutme.html */
+.hotspot-notepaper {
+  top: 38%;
+  left: 20%;
+  width: 14%;
+  height: 21%;
+}
+
+/* unicorn figurine -> horses.html */
+.hotspot-unicorn {
+  top: 72%;
+  left: 4%;
+  width: 21%;
+  height: 27%;
+}
+
+/* heart box -> stamps.html */
+.hotspot-heartbox {
+  top: 74%;
+  left: 25%;
+  width: 13%;
+  height: 25%;
+}
+
+/* mushroom jars -> cookbook.html */
+.hotspot-mushroomjars {
+  top: 74%;
+  left: 44%;
+  width: 24%;
+  height: 25%;
+}
+
+/* book stack -> library.html */
+.hotspot-bookstack {
+  top: 60%;
+  left: 70%;
+  width: 13%;
+  height: 39%;
+}
+
+/* love spell wand -> summoning-circle.html */
+.hotspot-wand {
+  top: 56%;
+  left: 82%;
+  width: 17%;
+  height: 11%;
+}
+
+/* old computer -> archive.html */
+.hotspot-computer {
+  top: 71%;
+  left: 85%;
+  width: 16%;
+  height: 27%;
+}
+
+/* ==========================================================================
+   FALLBACK / ACCESSIBLE LINK LIST
+   Always visible below the picture, so the page works without images,
+   on mobile, and with screen readers.
+   ========================================================================== */
+
+#map-links {
+  width: 100%;
+  max-width: 1600px;
+  margin: 1.5em auto;
+  padding: 0 1em 1em;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#map-links h2 {
+  font-family: "IM Fell English", serif;
+}
+
+#map-links ul.map {
+  display: inline-block;
+  text-align: left;
+}
